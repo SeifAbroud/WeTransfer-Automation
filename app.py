@@ -1,15 +1,20 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
-
-url = "https://wetransfer.com/"
-file_path = 'C:\\Users\\abrou\\PycharmProjects\\pythonProject7\\Wetransfere-automation\\affiche 1.2.png'
-webdriver_path = 'chromedriver-win32/chromedriver.exe'
+import sys
+#file_path = sys.argv[1]
+url = "https://wetransfer.com/" #site url
+file_path = input("Enter file path") #manual input to test
+file_path = file_path[1:-1] #to remove quotation marks when u copy path directly
+#file_path = 'C:\\Users\\abrou\\Desktop\\google 2023\\Graphic\\graphic design\\EXPOSED.jpg'
+webdriver_path = "C:\Windows\System32\chromedriver.exe" #web driver location
 service = Service(webdriver_path)
 driver = webdriver.Chrome(service=service)
-driver.get(url)
-time.sleep(2)
+driver.get(url) #open the website
+time.sleep(2) # waits for the website to load
 accept = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[3]/div[4]/button[1]')
 accept.click()
 agree = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[2]/button')
@@ -23,15 +28,11 @@ uselink = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[1]/
 uselink.click()
 getlink = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[2]/button[2]')
 getlink.click()
-time.sleep(10)
-driver.implicitly_wait(30)
-
-try :
-    holder = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[1]/div/div/div/input')  #lezm tlocate bl driver mich b google
-    link = holder.get_attribute("value")
-    copylink = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[2]/button')
-    copylink.click()
-    print("link copied")
-    print(link)
-except : print("Error while getting link ")
+button = "link__copy" #copy link button class name
+wait = WebDriverWait(driver, 300) #this will wait for 300 sec uploading , if it takes longer u can add more
+finish = wait.until(EC.presence_of_element_located((By.CLASS_NAME, button))) #wait for the button to appear
+finish.click() #this will copy the link
+holder = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[1]/div/div/div/input') #whis will locate link to print it
+link = holder.get_attribute("value")
+print(link)
 driver.quit()
