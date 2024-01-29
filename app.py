@@ -8,7 +8,9 @@ import sys
 #file_path = sys.argv[1]
 url = "https://wetransfer.com/" #site url
 file_path = input("Enter file path") #manual input to test
-file_path = file_path[1:-1] #to remove quotation marks when u copy path directly
+if(file_path[0]=='"'):
+    file_path = file_path[1:-1] #to remove quotation marks when u copy path directly
+
 #file_path = 'C:\\Users\\abrou\\Desktop\\google 2023\\Graphic\\graphic design\\EXPOSED.jpg'
 webdriver_path = "C:\Windows\System32\chromedriver.exe" #web driver location
 service = Service(webdriver_path)
