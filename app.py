@@ -4,18 +4,14 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import sys
-#file_path = sys.argv[1]
 url = "https://wetransfer.com/" #site url
-file_path = input("Enter file path") #manual input to test
-if(file_path[0]=='"'):
-    file_path = file_path[1:-1] #to remove quotation marks when u copy path directly
-
-#file_path = 'C:\\Users\\abrou\\Desktop\\google 2023\\Graphic\\graphic design\\EXPOSED.jpg'
-webdriver_path = "C:\Windows\System32\chromedriver.exe" #web driver location
+file_path = input("Enter file path")
+if(file_path[0]=='"'): # check if the path start with quotes mark or not
+    file_path = file_path[1:-1] # to remove quotation marks when u copy path directly
+webdriver_path = "C:\\Windows\\System32\\chromedriver.exe" # web driver location
 service = Service(webdriver_path)
 driver = webdriver.Chrome(service=service)
-driver.get(url) #open the website
+driver.get(url) # open the website
 time.sleep(2) # waits for the website to load
 accept = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[3]/div[4]/button[1]')
 accept.click()
