@@ -15,4 +15,9 @@ There are Two versions for this code :
 ### **How to use** :
 - you need to change the path for the chrome **driver** in the code . ( in this case , the driver is in C:\Windows\System32)
 - To use the script.bat file , first you need to edit it and put the path for the Code , then put the script.bat file in the C:\Windows\System32 folder so you can excute it directly from the cmd .
+  ### Excute :
+  **How to run the code** : 
+you can manually run the python file . Or
+you can use the script file , after placing it in \systeme32 , you can open the CMD and type `wtscript` to Excute the code . 
+
 
