@@ -35,7 +35,7 @@ def getlink(file_path) :
     finish.click() # this will copy the link
     holder = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[1]/div/div/div/input') # whis will locate link to print it
     link = holder.get_attribute("value")
-    print(link)
+    print("Link is copied to clipboard : ", link)
     driver.quit()
 def get_file(folder) :
     folder = Path(folder)
