@@ -15,5 +15,5 @@ Before using this script, please follow these steps:
 
 3. **Command Line Usage:**
    - To use the script from the command line, edit the 'wtfolder.bat' file.
-   - Change the Python location with the path to where you saved the Python code (`.\wt-auto-upload`).
+   - Change the Python location with the path to where you saved the Python code (`.\wt-folder-auto-upload.py`).
    - Place the `.bat` file in the `\system32` folder to use it from the command line.
