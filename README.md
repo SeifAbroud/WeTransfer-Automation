@@ -2,9 +2,10 @@
 If you find yourself repeatedly going through the steps of sending files via WeTransfer and wish to save time, this script can automate the process for you. By automating the steps of opening the website, uploading the file, and copying the link, you can save approximately 20 seconds per transfer. Additionally, you can multitask while the script runs.
 ### About the code : 
 this code lets u automate opening the website and uploading the file to directly get the link copied to clipboard and printed . 
-There are Two versions for this code : 
+There are Three versions for this code : 
   - wetransfere-autoamtion1 : Takes the file path as input and prints the link directly. In this version, you can observe the automation process as it unfolds, with the Chrome browser visible during automation.
   - wetransfere-autoamtion1.1 : The same functionality as the previous version, but runs in headless mode. All automation occurs in the background, and the link is copied to the clipboard directly.
+  - auto-latest-file-upload_1.3 : this version have same fonctionally , but for this one u need to create a folder , where you put the files you need to send into, the code will selecet the latest file as input .
   - Wtscript.bat : This file allows you to execute the code directly from the command prompt, saving you more time.
 ## Setup :
 ### **for This code you need** : 
