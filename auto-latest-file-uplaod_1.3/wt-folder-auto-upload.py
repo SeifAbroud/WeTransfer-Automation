@@ -24,6 +24,7 @@ def getlink(file_path) :
     file_input.send_keys(file_path)
     threedots = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[2]/button[1]')
     threedots.click()
+    time.sleep(0.5)
     uselink = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[1]/div[1]/div[3]/div[1]/div/div[2]/div')
     uselink.click()
     getlink = driver.find_element(By.XPATH,'//*[@id="__next"]/div/div[3]/div/div[2]/button[2]')
